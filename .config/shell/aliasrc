@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# Use neovim for vim if present.
+[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
+
+# Use nsxiv for sxiv if present.
+[ -x "$(command -v nsxiv)" ] && alias sxiv="nsxiv"
+
+# sudo not required for some system commands
+for command in mount umount pacman su systemctl shutdown poweroff reboot ; do
+	alias $command="sudo $command"
+done; unset command
+
+# Allows running aliases as sudo
+alias sudo="sudo "
+
+# Adds colors to commands
+alias ls="ls -h --color=auto --group-directories-first"
+alias sl="ls"
+alias l="ls"
+alias ll="ls -l"
+alias la="ls -la"
+alias ip="ip -c"
+alias grep="grep --color=auto"
+alias diff="diff --color=auto"
+alias ccat="highlight --out-format=ansi"
+
+# Adds verbosity, shortens common commands and filters output to my liking
+alias checkupdates="checkupdates | tee $XDG_CACHE_HOME/updates.txt"
+alias clock="tty-clock -c"
+alias py="python"
+alias ka="killall"
+alias rsync="rsync -av"
+alias b="cd .."
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias rm="rm -v"
+alias mkdir="mkdir -pv"
+alias yt="yt-dlp --embed-metadata -i"
+alias yta="yt -x -f bestaudio/best"
+alias ffmpeg="ffmpeg -hide_banner"
+alias dwmwinpick="xprop WM_CLASS WM_NAME"
+alias lsblk="lsblk -o NAME,SIZE,FSAVAIL,FSUSED,FSUSE%,TYPE,FSTYPE,MOUNTPOINTS"
+alias netwtraf="sudo netstat -atupen"
+alias hs="history 0 | grep"
+alias ldm="systemctl start lightdm"
+alias dotfiles="git --git-dir=$XDG_CONFIG_HOME/dotfiles --work-tree=$HOME" # https://www.atlassian.com/git/tutorials/dotfiles

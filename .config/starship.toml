@@ -1,0 +1,27 @@
+## Save to .config/starship.toml
+
+
+# JavaCafe01 Prompt
+
+format = "$all"
+add_newline = true
+
+[character]
+error_symbol = "[💀](bold red)"
+success_symbol = "[💀](bold green)"
+vicmd_symbol = "[💀](bold yellow)"
+format = "$symbol [⋟](bold bright-black) "
+
+[hostname]
+ssh_only = true
+format = "[$hostname](bold blue) "
+disabled = false
+
+[directory]
+disabled = true
+
+[line_break]
+disabled = true
+
+[lua]
+symbol = "[](blue) "

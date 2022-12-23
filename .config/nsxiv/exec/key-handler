@@ -1,0 +1,34 @@
+#!/bin/zsh
+copy_and_move_dirs=$(find /linux-storage "$HOME" -maxdepth 2 -type d)
+while read -r file
+do
+        case "$1" in
+        "w") setbg "$file" & ;;
+        "c")
+		[ -z "$destdir" ] && destdir="$( echo $copy_and_move_dirs | dmenu -l 20 -i -p "Copy file(s) to where?")"
+		[ ! -d "$destdir" ] && notify-send "$destdir is not a directory, cancelled." && exit
+		cp "$file" "$destdir" && notify-send -i "$(readlink -f "$file")" "$file copied to $destdir." &
+		;;
+        "m")
+		[ -z "$destdir" ] && destdir="$( echo $copy_and_move_dirs | dmenu -l 20 -i -p "Move file(s) to where?")"
+		[ ! -d "$destdir" ] && notify-send "$destdir is not a directory, cancelled." && exit
+		mv "$file" "$destdir" && notify-send -i "$(readlink -f "$file")" "$file moved to $destdir." &
+		;;
+	"r")
+		convert -rotate 90 "$file" "$file" ;;
+	"R")
+		convert -rotate -90 "$file" "$file" ;;
+	"f")
+		convert -flop "$file" "$file" ;;
+	"y")
+		xclip -selection clipboard -t image/${$(readlink -f "$file")##*.} < $(readlink -f "$file") &&
+		notify-send -i "$(readlink -f "$file")" "$(readlink -f "$file") copied to clipboard" & ;;
+	"Y")
+		readlink -f "$file" | tr -d '\n' | xclip -selection clipboard &&
+		notify-send -i "$(readlink -f "$file")" "Image path copied to clipboard" & ;;
+	"d")
+		[ "$(printf "No\\nYes" | dmenu -i -p "Really delete $file?")" = "Yes" ] && rm "$file" && notify-send "$file deleted." ;;
+	"g")	ifinstalled gimp && setsid -f gimp "$file" ;;
+	"i")	notify-send "File information" "$(mediainfo "$file")" ;;
+        esac
+done

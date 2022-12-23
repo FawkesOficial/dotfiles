@@ -1,0 +1,12 @@
+/* Center URL in url-bar  */
+#urlbar:not([focused]) #urlbar-input {
+	text-align: center !important;
+}
+
+
+/* Unrounded tab corners */
+
+/* .tab-background {
+	border-radius: 0px !important;
+}
+ */

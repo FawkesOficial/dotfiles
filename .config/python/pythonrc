@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+# Store interactive Python shell history in ~/.cache/python_history
+# instead of ~/.python_history.
+#
+# Create the following .config/pythonstartup.py file
+# and export its path using PYTHONSTARTUP environment variable:
+#
+# export PYTHONSTARTUP="${XDG_CONFIG_HOME:-$HOME/.config}/pythonstartup.py"
+
+from atexit import register
+from os import getenv; from os.path import join, expanduser
+from readline import read_history_file, write_history_file, set_history_length
+
+histfile = join(getenv("XDG_CACHE_HOME", expanduser("~/.cache")), "python_history")
+try:
+    read_history_file(histfile)
+    # default history len is -1 (infinite), which may grow unruly
+    set_history_length(1000)
+except FileNotFoundError:
+    pass
+
+register(write_history_file, histfile)
