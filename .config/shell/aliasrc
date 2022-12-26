@@ -44,4 +44,5 @@ alias lsblk="lsblk -o NAME,SIZE,FSAVAIL,FSUSED,FSUSE%,TYPE,FSTYPE,MOUNTPOINTS"
 alias netwtraf="sudo netstat -atupen"
 alias hs="history 0 | grep"
 alias ldm="systemctl start lightdm"
-alias dotfiles="git --git-dir=$XDG_CONFIG_HOME/dotfiles --work-tree=$HOME" # https://www.atlassian.com/git/tutorials/dotfiles
+alias dotfiles="git --git-dir=$HOME/.config/dotfiles --work-tree=$HOME" # https://www.atlassian.com/git/tutorials/dotfiles
+alias system-configs="git --git-dir=$HOME/.config/system-configs --work-tree=/" # https://www.atlassian.com/git/tutorials/dotfiles
