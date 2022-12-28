@@ -44,5 +44,5 @@ alias lsblk="lsblk -o NAME,SIZE,FSAVAIL,FSUSED,FSUSE%,TYPE,FSTYPE,MOUNTPOINTS"
 alias netwtraf="sudo netstat -atupen"
 alias hs="history 0 | grep"
 alias ldm="systemctl start lightdm"
-alias dotfiles="git --git-dir=$HOME/.config/dotfiles --work-tree=$HOME" # https://www.atlassian.com/git/tutorials/dotfiles
+alias dotfiles="git -C $HOME/.config/dotfiles --work-tree=$HOME" # https://www.atlassian.com/git/tutorials/dotfiles
 alias NOW='date +"%d/%m/%Y - %I:%M %p"'
