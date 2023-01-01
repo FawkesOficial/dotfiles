@@ -15,11 +15,12 @@ done; unset command
 alias sudo="sudo "
 
 # Adds colors to commands
-alias ls="ls -h --color=auto --group-directories-first"
+alias ls="lsd --group-directories-first --header --date relative"
 alias sl="ls"
 alias l="ls"
 alias ll="ls -l"
-alias la="ls -la"
+alias la="ls -lA"
+alias las="la --total-size"
 alias ip="ip -c"
 alias grep="grep --color=auto"
 alias diff="diff --color=auto"
