@@ -46,3 +46,4 @@ alias hs="history 0 | grep"
 alias ldm="systemctl start lightdm"
 alias dotfiles="git --git-dir=$HOME/.config/dotfiles --work-tree=$HOME" # https://www.atlassian.com/git/tutorials/dotfiles
 alias NOW='date +"%d/%m/%Y - %I:%M %p"'
+alias uptime="uptime --pretty"
