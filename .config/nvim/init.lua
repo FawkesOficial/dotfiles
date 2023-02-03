@@ -24,7 +24,7 @@ vim.opt.undofile = true
 ---
 -- Colorscheme
 ---
--- vim.opt.termguicolors = true
+vim.opt.termguicolors = true
 -- vim.cmd('colorscheme nord')
 
 local pywal = require('pywal')

@@ -130,6 +130,34 @@ return packer.startup(function(use)
   use { "Pocco81/auto-save.nvim" }
   use { "Pocco81/true-zen.nvim" }
 
+  -- Fawkes Custom
+  -- use {
+  --   'RRethy/vim-hexokinase',
+  --   run = 'make hexokinase',
+  --   cmd = {"HexokinaseToggle"},
+  --   config = function()
+  --       vim.g.Hexokinase_highlighters = {'backgroundfull'}
+  --       vim.g.Hexokinase_optInPatterns = {
+  --           'full_hex', 'rgb', 'rgba', 'hsl', 'hsla'
+  --       }
+  --   end
+  -- }
+  -- vim.api.nvim_set_var('Hexokinase_highlighters', {'backgroundfull'})
+  -- use {
+  --   'rrethy/vim-hexokinase',
+  --   opt=true,
+  --   run = 'cd ~/.local/share/nvim/site/pack/packer/start/vim-hexokinase && make hexokinase'
+  -- }
+  -- Vim Hexokinase
+  use {
+    'RRethy/vim-hexokinase',
+    run = 'make hexokinase',
+    config = function()
+        vim.g.Hexokinase_highlighters = {'backgroundfull'}
+    end
+  }
+
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
