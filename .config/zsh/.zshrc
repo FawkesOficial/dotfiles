@@ -37,6 +37,7 @@ bindkey '^I' first-tab
 [ -f "$XDG_CONFIG_HOME/shell/aliasrc" ] && source "$XDG_CONFIG_HOME/shell/aliasrc"
 
 eval "$(starship init zsh)"
+#export PROMPT="[%n@%m %~]$ "
 
 # Load syntax highlighting; should be last.
 source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null

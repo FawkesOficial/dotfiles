@@ -7,16 +7,18 @@
 systemctl --user import-environment DISPLAY
 
 polychromatic-cli -d mouse --dpi 1500                                   # Change the dpi for my Razer mouse
+polychromatic-cli -d mouse -c "#ff0000" -o static                       # Change the color of my Razer mouse
 setxkbmap pt &                                                          # Set X Keyboard map
 #xrandr --output DP-0 --mode 1920x1080 --rate 144.00 --primary          # Set resolution and refresh-rate for main monitor - Deprecated: Using /etc/X11/xorg.conf
 #xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!     # Uncomment to use Xresources colors/settings on startup - Deprecated: Using pywal to generate my colors
 setbg &                                                                 # Set the background with the ".scripts/setbg" script
 checkupdates > $XDG_CACHE_HOME/updates.txt &                            # Generate updates info for later use in slstatus
 /opt/dmenu/dmenu_path &                                                 # Generate dmenu_run cache
+ntfy subscribe --from-config &
 
 autostartrc="$XDG_CONFIG_HOME/x11/autostartrc"
 while read program; do
-    [[ "\#$program" != \#* ]] && pgrep -f "$program" || "$program" &
+    [[ "\#$program" != \#* ]] && pgrep "$program" || "$program" &
 done < $autostartrc 2>&1 >/dev/null
 
 # If using xrdb, ensure that it has finished running before moving on to start the WM/DE.
