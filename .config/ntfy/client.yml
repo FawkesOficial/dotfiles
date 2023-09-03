@@ -14,8 +14,8 @@ default-host: https://ntfy.fawkeshomelab.com
 
 # default-token:
 
-# default-user:
-# default-password:
+default-user: "fawkes"
+default-password: "6s]!Zo}z;+X'4m&9U3"
 
 # Default command will execute after "ntfy subscribe" receives a message if no command is provided in subscription below
 # default-command:
@@ -55,5 +55,5 @@ default-host: https://ntfy.fawkeshomelab.com
 #     and 'tags' (comma-separated list, logical AND). See https://ntfy.sh/docs/subscribe/api/#filter-messages.
 #
 subscribe:
-  - topic: test
-    command: 'notify-send "$message"'
+  - topic: Calendar
+    command: 'notify-send "$title" "$message" --icon="$HOME/.config/ntfy/ntfy.png"'
