@@ -7,7 +7,7 @@
 systemctl --user import-environment DISPLAY
 
 polychromatic-cli -d mouse --dpi 1500                                   # Change the dpi for my Razer mouse
-polychromatic-cli -d mouse -c "#ff0000" -o static                       # Change the color of my Razer mouse
+#polychromatic-cli -d mouse -c "#ff0000" -o static                      # Change the color of my Razer mouse
 setxkbmap pt &                                                          # Set X Keyboard map
 #xrandr --output DP-0 --mode 1920x1080 --rate 144.00 --primary          # Set resolution and refresh-rate for main monitor - Deprecated: Using /etc/X11/xorg.conf
 #xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!     # Uncomment to use Xresources colors/settings on startup - Deprecated: Using pywal to generate my colors
