@@ -45,7 +45,8 @@ alias lsblk="lsblk -o NAME,SIZE,FSUSED,FSUSE%,FSAVAIL,TYPE,FSTYPE,MOUNTPOINTS,LA
 alias netwtraf="sudo netstat -atupen"
 alias hs="history 0 | grep"
 alias ldm="systemctl start lightdm"
-alias dotfiles="git --git-dir=$HOME/.config/dotfiles --work-tree=$HOME" # https://www.atlassian.com/git/tutorials/dotfiles
+alias dotfiles="git --git-dir=$HOME/.config/dotfiles --work-tree=$HOME"         # https://www.atlassian.com/git/tutorials/dotfiles
+alias system-configs="sudo GIT_SSH_COMMAND='ssh -i $HOME/.ssh/github-fawkes' git --git-dir=$HOME/.config/system-configs --work-tree=/" # https://www.atlassian.com/git/tutorials/dotfiles
 alias NOW='date +"%d/%m/%Y - %I:%M %p"'
 alias uptime="uptime --pretty"
 alias xmltohtml="xsltproc nmap.xml -o nmap.html"
