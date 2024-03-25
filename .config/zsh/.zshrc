@@ -1,6 +1,8 @@
 #!/bin/zsh
 
-[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && startx
+# Launch DM/WM automatically on TTY
+#[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && startx         # deprecated; using Wayland (Hyprland) now
+[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Hyprland >/dev/null 2>&1 && $XDG_CONFIG_HOME/x11/xinitrc
 
 #set enable-keypad on
 stty -ixon # Disable ctrl-s and ctrl-q.
@@ -36,8 +38,10 @@ bindkey '^I' first-tab
 # Load shell aliases
 [ -f "$XDG_CONFIG_HOME/shell/aliasrc" ] && source "$XDG_CONFIG_HOME/shell/aliasrc"
 
-eval "$(starship init zsh)"
 #export PROMPT="[%n@%m %~]$ "
+eval "$(starship init zsh)"
+
+(cat ~/.cache/wal/sequences &)
 
 # Load syntax highlighting; should be last.
 source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null

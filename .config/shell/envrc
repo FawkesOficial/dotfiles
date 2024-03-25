@@ -4,17 +4,13 @@
 [[ ":$PATH:" != *":$HOME/.scripts:"* ]] && export PATH="$HOME/.scripts:$PATH"
 [[ ":$PATH:" != *":$HOME/.scripts/wrappers:"* ]] && export PATH="$HOME/.scripts/wrappers:$PATH"
 [[ ":$PATH:" != *":$HOME/.local/bin:"* ]] && export PATH="$HOME/.local/bin:$PATH"
+[[ ":$PATH:" != *":$HOME/.local/share/cargo/bin:"* ]] && export PATH="$HOME/.local/share/cargo/bin:$PATH"
 
 # Default programs:
-export SUDO_ASKPASS="$HOME/.scripts/dpass"
 export EDITOR="nvim"
 export VISUAL="nvim"
-#export EDITOR="nano"
-#export VISUAL="nano"
 export PAGER="most"
-export TERMINAL="st"
-export TERM="st-256color"
-export TERMINFO="/usr/share/terminfo"
+export TERMINAL="alacritty"
 export BROWSER="firefox"
 
 # Application configs:
