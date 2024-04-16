@@ -77,8 +77,8 @@
     // "device": "acpi_video1",
     "format": "{icon} {percent}%",
     "format-icons": ["", ""],
-    "on-scroll-down": "brightnessctl -c backlight set 1%-",
-    "on-scroll-up": "brightnessctl -c backlight set +1%"
+    "on-scroll-up": "brightnessctl -c backlight set 1%-",
+    "on-scroll-down": "brightnessctl -c backlight set +1%"
 },
 "pulseaudio": {
   // "scroll-step": 1, // %, can be a float
