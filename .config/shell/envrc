@@ -15,6 +15,7 @@ export TERMINAL="alacritty"
 export BROWSER="firefox"
 
 # Application configs:
+export GTK_THEME="Adwaita-dark"
 export WALLPAPERS_DIR="/linux-storage/Pictures/Wallpapers"
 
 # Load secret environment variables:
