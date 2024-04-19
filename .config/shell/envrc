@@ -18,7 +18,9 @@ export TERMINFO="/usr/share/terminfo"
 export BROWSER="firefox"
 
 # Application configs:
+export GTK_THEME="Adwaita-dark"
 export WALLPAPERS_DIR="/linux-storage/Pictures/Wallpapers"
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Load secret environment variables:
 [ -f "$HOME/.config/shell/.envsecrets" ] && source "$HOME/.config/shell/.envsecrets"
@@ -60,3 +62,4 @@ export HISTFILE="$XDG_CONFIG_HOME/shell/history"
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 #export MBSYNCRC="$XDG_CONFIG_HOME/mbsync/config"
 #export ELECTRUMDIR="$XDG_DATA_HOME/electrum"
+. "/home/fawkes/.local/share/cargo/env"
