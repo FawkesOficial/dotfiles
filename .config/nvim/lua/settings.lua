@@ -1,5 +1,5 @@
 -- Make Neovim share the clipboard with the system
-vim.o.clipboard = "unnamedplus"
+vim.opt.clipboard = "unnamedplus"
 
 -- Display line number on the left
 vim.opt.number = true
@@ -69,3 +69,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+-- [REQUIRES CUSTOM KEYBIND TO TOGGLE ON/OFF]
+-- Display a vertical bar as a reference to line width
+-- vim.opt.colorcolumn = "120"
