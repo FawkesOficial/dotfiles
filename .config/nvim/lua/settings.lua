@@ -12,7 +12,7 @@ vim.opt.undodir = vim.fn.expand("$XDG_CACHE_HOME/.vim/undodir")
 vim.opt.undofile = true
 
 -- Tell Neovim that we have a Nerd Font installed
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [REQUIRES PLUGINS]
 -- Don"t show the mode, since it"s already in the status line
@@ -32,10 +32,6 @@ vim.opt.smartcase = true
 -- Decrease update time
 vim.opt.updatetime = 250
 
--- Decrease mapped sequence wait time
--- Displays which-key popup sooner
-vim.opt.timeoutlen = 300
-
 -- Configure how new splits should be opened
 vim.opt.splitright = true
 vim.opt.splitbelow = true
@@ -52,6 +48,7 @@ vim.opt.inccommand = "split"
 -- [REQUIRES PLUGINS (?)]
 -- Show which line your cursor is on
 -- vim.opt.cursorline = true
+-- vim.opt.cursorlineopt = "number"
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
@@ -73,3 +70,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- [REQUIRES CUSTOM KEYBIND TO TOGGLE ON/OFF]
 -- Display a vertical bar as a reference to line width
 -- vim.opt.colorcolumn = "120"
+
+-- Use spaces instead of tabs. the only correct way. as it should be
+vim.opt.expandtab = true
+vim.opt.smartindent = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
