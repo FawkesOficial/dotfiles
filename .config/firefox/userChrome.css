@@ -1,12 +1,15 @@
 /* Center URL in url-bar  */
 #urlbar:not([focused]) #urlbar-input {
-	text-align: center !important;
+    text-align: center !important;
 }
-
 
 /* Unrounded tab corners */
-
-/* .tab-background {
-	border-radius: 0px !important;
-}
- */
+/* .tab-background { */
+/*     border-radius: 0px 0px !important; */
+/*     margin-bottom: 0px !important; */
+/*     margin-top: 0 !important; */
+/* } */
+/**/
+/* .tabbrowser-tab:not([selected=true]):not([multiselected=true]) .tab-background { */
+/*     background-color: color-mix(in srgb, currentColor 5%, transparent); */
+/* } */
