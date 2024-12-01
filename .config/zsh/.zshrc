@@ -44,7 +44,7 @@ bindkey '^I' first-tab
 eval "$(starship init zsh)"
 #export PROMPT="[%n@%m %~]$ "
 
-# yazi file manager
+# yazi (file manager)
 function y() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
     yazi "$@" --cwd-file="$tmp"
@@ -54,5 +54,9 @@ function y() {
     rm -f -- "$tmp" > /dev/null
 }
 
+# zoxide (smart cd)
+eval "$(zoxide init zsh)"
+
+alias cd="z"
 # Load syntax highlighting; should be last.
 source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
