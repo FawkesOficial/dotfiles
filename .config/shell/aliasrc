@@ -51,3 +51,4 @@ alias NOW='date +"%d/%m/%Y - %I:%M %p"'
 alias uptime="uptime --pretty"
 alias xmltohtml="xsltproc nmap.xml -o nmap.html"
 alias running-services="find /etc/systemd -type l -exec test -f {} \; -print | awk -F'/' '{ printf (\"%-40s | %s\n\", \$(NF-0), \$(NF-1)) }' | sort -f"
+alias lg="lazygit"
