@@ -2,6 +2,11 @@
 
 [ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && startx
 
+CONFIG="$ZDOTDIR/.zshrc"
+
+alias zsh-reload="source $CONFIG"
+alias zsh-edit-config="vim $CONFIG"
+
 #set enable-keypad on
 stty -ixon # Disable ctrl-s and ctrl-q.
 #set -o vi # vi mode
