@@ -39,5 +39,15 @@ bindkey '^I' first-tab
 eval "$(starship init zsh)"
 #export PROMPT="[%n@%m %~]$ "
 
+# yazi file manager
+function y() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+    yazi "$@" --cwd-file="$tmp"
+    if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        builtin cd -- "$cwd"
+    fi
+    rm -f -- "$tmp" > /dev/null
+}
+
 # Load syntax highlighting; should be last.
 source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
