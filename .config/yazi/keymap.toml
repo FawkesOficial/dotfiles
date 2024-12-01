@@ -1,0 +1,80 @@
+# Dropping to the shell
+# https://yazi-rs.github.io/docs/tips/#dropping-to-shell
+[[manager.prepend_keymap]]
+on   = "!"
+run  = 'shell "$SHELL" --block --confirm'
+desc = "Open shell here"
+
+# Smart enter: open files or enter directories all in one key
+# https://yazi-rs.github.io/docs/tips/#smart-enter
+[[manager.prepend_keymap]]
+on   = "<Enter>"
+run  = "plugin --sync smart-enter"
+# For upcoming Yazi 0.4 (nightly version):
+# run  = "plugin smart-enter"
+desc = "Enter the child directory, or open the file"
+
+# Copy selected files to the system clipboard while yanking
+# https://yazi-rs.github.io/docs/tips/#selected-files-to-clipboard
+[[manager.prepend_keymap]]
+on  = "y"
+run = [ '''
+    shell 'echo "$@" | xclip -i -selection clipboard -t text/uri-list' --confirm
+''', "yank" ]
+
+# cd back to the root of the current Git repository
+# https://yazi-rs.github.io/docs/tips/#cd-to-git-root
+[[manager.prepend_keymap]]
+on = [ "g", "r" ]
+run = '''
+    shell 'ya pub dds-cd --str "$(git rev-parse --show-toplevel)"' --confirm
+'''
+desc = "Go to the root of the current Git repo"
+
+# Maximize preview pane
+# https://yazi-rs.github.io/docs/tips/#max-preview
+[[manager.prepend_keymap]]
+on   = "T"
+run  = "plugin --sync max-preview"
+# For upcoming Yazi 0.4 (nightly version):
+# run  = "plugin max-preview"
+desc = "Maximize or restore preview"
+
+# File navigation wraparound
+# https://yazi-rs.github.io/docs/tips/#navigation-wraparound
+[[manager.prepend_keymap]]
+on  = "k"
+run = "plugin --sync wraparound --args=-1"
+
+[[manager.prepend_keymap]]
+on  = "j"
+run = "plugin --sync wraparound --args=1"
+
+[[manager.prepend_keymap]]
+on  = "<Up>"
+run = "plugin --sync wraparound --args=-1"
+
+[[manager.prepend_keymap]]
+on  = "<Down>"
+run = "plugin --sync wraparound --args=1"
+
+# Smart filter
+# https://github.com/yazi-rs/plugins/tree/main/smart-filter.yazi
+[[manager.prepend_keymap]]
+on   = "F"
+run  = "plugin smart-filter"
+desc = "Smart filter"
+
+# Chmod
+# https://github.com/yazi-rs/plugins/tree/main/chmod.yazi
+[[manager.prepend_keymap]]
+on   = [ "c", "m" ]
+run  = "plugin chmod"
+desc = "Chmod on selected files"
+
+# diff
+# https://github.com/yazi-rs/plugins/tree/main/diff.yazi
+[[manager.prepend_keymap]]
+on   = "<C-d>"
+run  = "plugin diff"
+desc = "Diff the selected with the hovered file"
