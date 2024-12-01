@@ -103,5 +103,9 @@ _fzf_comprun() {
 # bat (better cat)
 export BAT_THEME="base16"
 
+# thefuck (command correction)
+eval $(thefuck --alias)
+eval $(thefuck --alias fk)
+
 # Load syntax highlighting; should be last.
 source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
