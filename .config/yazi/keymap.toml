@@ -19,7 +19,7 @@ desc = "Enter the child directory, or open the file"
 [[manager.prepend_keymap]]
 on  = "y"
 run = [ '''
-    shell 'echo "$@" | xclip -i -selection clipboard -t text/uri-list' --confirm
+    shell 'for file in "$@"; do printf "file://%s\\n" "$(realpath "$file")"; done | xclip -selection clipboard -t text/uri-list' --confirm
 ''', "yank" ]
 
 # cd back to the root of the current Git repository
