@@ -107,5 +107,9 @@ export BAT_THEME="base16"
 eval $(thefuck --alias)
 eval $(thefuck --alias fk)
 
+# Load zsh-autosuggestions
+source $ZDOTDIR/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
+bindkey '^I^I' autosuggest-accept
+
 # Load syntax highlighting; should be last.
 source $ZDOTDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
