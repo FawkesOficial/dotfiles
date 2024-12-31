@@ -9,7 +9,7 @@ desc = "Open shell here"
 # https://yazi-rs.github.io/docs/tips/#smart-enter
 [[manager.prepend_keymap]]
 on   = "<Enter>"
-run  = "plugin --sync smart-enter"
+run  = "plugin smart-enter"
 # For upcoming Yazi 0.4 (nightly version):
 # run  = "plugin smart-enter"
 desc = "Enter the child directory, or open the file"
@@ -35,7 +35,7 @@ desc = "Go to the root of the current Git repo"
 # https://yazi-rs.github.io/docs/tips/#max-preview
 [[manager.prepend_keymap]]
 on   = "T"
-run  = "plugin --sync max-preview"
+run  = "plugin max-preview"
 # For upcoming Yazi 0.4 (nightly version):
 # run  = "plugin max-preview"
 desc = "Maximize or restore preview"
