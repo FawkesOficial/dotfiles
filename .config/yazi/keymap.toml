@@ -44,19 +44,19 @@ desc = "Maximize or restore preview"
 # https://yazi-rs.github.io/docs/tips/#navigation-wraparound
 [[manager.prepend_keymap]]
 on  = "k"
-run = "plugin --sync wraparound --args=-1"
+run = "plugin wraparound --args=-1"
 
 [[manager.prepend_keymap]]
 on  = "j"
-run = "plugin --sync wraparound --args=1"
+run = "plugin wraparound --args=1"
 
 [[manager.prepend_keymap]]
 on  = "<Up>"
-run = "plugin --sync wraparound --args=-1"
+run = "plugin wraparound --args=-1"
 
 [[manager.prepend_keymap]]
 on  = "<Down>"
-run = "plugin --sync wraparound --args=1"
+run = "plugin wraparound --args=1"
 
 # Smart filter
 # https://github.com/yazi-rs/plugins/tree/main/smart-filter.yazi
