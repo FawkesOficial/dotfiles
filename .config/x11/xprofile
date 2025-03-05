@@ -15,6 +15,7 @@ setbg &                                                                 # Set th
 checkupdates > $XDG_CACHE_HOME/updates.txt &                            # Generate updates info for later use in slstatus
 /opt/dmenu/dmenu_path &                                                 # Generate dmenu_run cache
 ntfy subscribe --from-config &
+unclutter --timeout 10 --start-hidden
 
 autostartrc="$XDG_CONFIG_HOME/x11/autostartrc"
 while read program; do
