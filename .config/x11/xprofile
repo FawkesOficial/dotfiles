@@ -16,6 +16,7 @@ checkupdates > $XDG_CACHE_HOME/updates.txt &                            # genera
 /opt/dmenu/dmenu_path &                                                 # generate dmenu_run cache
 ntfy subscribe --from-config &                                          # ntfy notifications from my homelab
 unclutter --timeout 10 --start-hidden &                                 # automatically hides the mouse cursor after 10s of inactivity
+caffeine &                                                              # prevents the desktop from becoming idle when an application is in full-screen
 
 autostartrc="$XDG_CONFIG_HOME/x11/autostartrc"
 while read program; do
