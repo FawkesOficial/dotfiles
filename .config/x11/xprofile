@@ -6,16 +6,16 @@
 [ -f "$HOME/.config/shell/envrc" ] && source "$HOME/.config/shell/envrc"
 systemctl --user import-environment DISPLAY
 
-polychromatic-cli -d mouse --dpi 1500                                   # Change the dpi for my Razer mouse
-#polychromatic-cli -d mouse -c "#ff0000" -o static                      # Change the color of my Razer mouse
-setxkbmap pt &                                                          # Set X Keyboard map
-#xrandr --output DP-0 --mode 1920x1080 --rate 144.00 --primary          # Set resolution and refresh-rate for main monitor - Deprecated: Using /etc/X11/xorg.conf
-#xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!     # Uncomment to use Xresources colors/settings on startup - Deprecated: Using pywal to generate my colors
-setbg &                                                                 # Set the background with the ".scripts/setbg" script
-checkupdates > $XDG_CACHE_HOME/updates.txt &                            # Generate updates info for later use in slstatus
-/opt/dmenu/dmenu_path &                                                 # Generate dmenu_run cache
-ntfy subscribe --from-config &
-unclutter --timeout 10 --start-hidden &
+polychromatic-cli -d mouse --dpi 1500                                   # change the dpi for my razer mouse
+#polychromatic-cli -d mouse -c "#ff0000" -o static                      # change the color of my razer mouse
+setxkbmap pt &                                                          # set X keyboard map
+#xrandr --output DP-0 --mode 1920x1080 --rate 144.00 --primary          # set resolution and refresh-rate for main monitor - [deprecated]: Using /etc/X11/xorg.conf
+#xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!     # uncomment to use xresources colors/settings on startup - [deprecated]: Using pywal to generate my colors
+setbg &                                                                 # set the background with the ".scripts/setbg" script
+checkupdates > $XDG_CACHE_HOME/updates.txt &                            # generate updates info for later use in slstatus
+/opt/dmenu/dmenu_path &                                                 # generate dmenu_run cache
+ntfy subscribe --from-config &                                          # ntfy notifications from my homelab
+unclutter --timeout 10 --start-hidden &                                 # automatically hides the mouse cursor after 10s of inactivity
 
 autostartrc="$XDG_CONFIG_HOME/x11/autostartrc"
 while read program; do
