@@ -59,3 +59,6 @@ alias alias-config="vim $XDG_CONFIG_HOME/shell/aliasrc && source $XDG_CONFIG_HOM
 alias jnb="jq '.cells[].source'"
 alias ff="fastfetch"
 alias dsk="duf -hide special"
+dirchecksum () {
+    find "$1" -type f -exec md5sum {} + | awk '{print $1}' | sort | md5sum
+}
